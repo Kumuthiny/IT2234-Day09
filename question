@@ -1,0 +1,76 @@
+db.students.insertOne(
+{
+  "regno": "2021IT006",
+  "name": "kumu",
+  "age": 23,
+  "degree": "IT",
+  "gpa": 3.2,
+  "skills": [
+    "Js",
+    "MongoDb",
+    "Node",
+	"MySql"
+  ],
+  "gender": "F"
+}
+)
+
+db.students.insertMany(
+[
+{
+  "regno": "2021IT007",
+  "name": "jathu",
+  "age": 23,
+  "degree": "IT",
+  "gpa": 3.5,
+  "skills": [
+    "MySql",
+    "MongoDb",
+    "Node"
+  ],
+  "gender": "F"
+},
+
+{
+  "regno": "2021IT008",
+  "name": "keerthu",
+  "age": 23,
+  "degree": "IT",
+  "gpa": 3.1,
+  "skills": [
+    "Js",
+    "MongoDb",
+	"MySql"
+  ],
+  "gender": "F"
+},
+
+{
+  "regno": "2021IT009",
+  "name": "vino",
+  "age": 23,
+  "degree": "IT",
+  "gpa": 3.0,
+  "skills": [
+    "Js",
+    "Java",
+    "Node",
+	"MySql"
+  ],
+  "gender": "F"
+}
+]
+)
+
+db.students.find({"gender":"F"})
+
+db.students.findOne({"gender":"F"})
+
+age:{$gt:23}
+db.students.find({age:{$gt:23}})
+
+db.students.find().sort({'gpa':1})
+
+db.students.find({'degree':'IT'}).sort({'gpa':1})
+
+db.students.find({'degree':'IT','gender':"M"}).sort({'gpa':1})
